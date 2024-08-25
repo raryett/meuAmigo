@@ -1,0 +1,50 @@
+    Meu melhor amigo esta aqui para você!
+
+O sistema funciona assim:
+
+1° etapa:
+
+    ## ultima coisa que vou fazer pq não sei como fazer ##
+    Primeira tela tem uma página de login e senha , criar conta e recuperar a conta.
+
+
+2°etapa:
+     Segunda tela vai ter uma página com o menu aberto com as seguintes opções:
+     Viagem  -  onde o usuario vai poder escrever tudo sobre a viagem.
+     Viagem em Grupos - onde ele vai poder falar sobre as viagens em grupos.
+
+3°etapa:
+    Dentro de viagem vai ter as opções de viagem:
+        Mostra todas as viagens que a pessoa tem sozinha - Só uma lista de todas
+            Criar uma viagem:
+                Nome da viagem -
+                Destino da viagem -
+                Data da viagem -
+                Passagem de aviao -
+                Hospedagem da viagem -
+                Quem vai na viagem -
+                Roteiro da viagem -
+                Observações da viagem -
+
+    Dentro da viagem em grupos vai ter:
+        Todas as viagens em grupo
+        Criar uma viagem em grupo
+            Dentro da viagem em grupo vai ter:
+                Destino da viagem -
+                Data da viagem -
+                Passagem de aviao -
+                Hospedagem da viagem -
+                Quem vai na viagem -
+                Roteiro da viagem -
+                Observações da viagem -
+
+
+
+
+
+
+
+
+
+
+
