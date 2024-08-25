@@ -1,0 +1,43 @@
+CREATE TABLE usuario (
+    id PRIMARYKEY,
+    nomeCompleto VARCHAR(255),
+    usuario VARCHAR(255) UNIQUE,
+    email VARCAHR(255),
+    senha VARCHAR(255)
+
+);
+
+CREATE TABLE  viagem (
+    id PRIMARYKEY,
+    nomeViagem VARCHAR(255) NOT NULL,
+    destino Varchar(255) NOT NULL,
+    data VARCHAR(255),
+    passagem VARCHAR(255),
+    hospedagem VARCHAR(255),
+    integrantesId INT FOREIGN KEY REFERENCES usuario (id),
+    roteiro VARCHAR(255),
+    observaçoes VARCHAR(255)
+
+);
+
+
+
+CREATE TABLE Grupos (
+    id PRIMARY KEY ,
+    idDaViagem  Int FOREIGN KEY REFERENCES viagem (id) ## vai linkar com o id da viagem ##,
+    interacoes VARCHAR (255)
+
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
