@@ -1,35 +1,72 @@
+-- Tabela para armazenar os usuários
 CREATE TABLE usuario (
-    id PRIMARYKEY,
-    nomeCompleto VARCHAR(255),
-    usuario VARCHAR(255) UNIQUE,
-    email VARCAHR(255),
-    senha VARCHAR(255)
+    id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+    nomeCompleto VARCHAR(255) NOT NULL,
+    email VARCAHR(255) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL
 
 );
-
+-- Tabela para armazenar as viagens individuais
 CREATE TABLE  viagem (
-    id PRIMARYKEY,
+    id_viagem INT PRIMARY KEY AUTO_INCREMENT,
+    id_usuario INT,
     nomeViagem VARCHAR(255) NOT NULL,
     destino Varchar(255) NOT NULL,
-    data VARCHAR(255),
-    passagem VARCHAR(255),
+    data_viagem DATE NOT NULL,
+    passagem_aviao VARCHAR(255),
     hospedagem VARCHAR(255),
-    integrantesId INT FOREIGN KEY REFERENCES usuario (id),
-    roteiro VARCHAR(255),
-    observaçoes VARCHAR(255)
-
+    roteiro TEXT,
+    observações TEXT,
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
 );
 
 
-
-CREATE TABLE Grupos (
-    id PRIMARY KEY ,
-    idDaViagem  Int FOREIGN KEY REFERENCES viagem (id) ## vai linkar com o id da viagem ##,
-    interacoes VARCHAR (255)
+-- Tabela para armazenar as viagens em grupo
+CREATE TABLE viagensGrupo  (
+    id_viagem_grupo INT PRIMAERY KEU AUTO_INCREMENT,
+    nome_grupo VARCHAR(255)  NOT NULL,
+    destino VARCHAR(255) NOT NULL,
+    data_viagem DATE NOT NULL,
+    passagem_aviao VARCHA(255),
+    roteiro TEXT,
+    observações TEXT
 
 );
 
+-- Tabela para armazenar os participantes das viagens em grupo
+CREATE TABLE participantesGrupo (
+    id_participantes INT PRIMARY KEY AUTO_INCREMENT,
+    id_viagem_grupo INT,
+    nome_participante VARCHAR(255) NOT NULL,
+    contato_participante VARCHAR(255),
+    FOREIGN KEY (id_viagem_grupo) REFERENCES viagensGrupo(id_viagem_grupo)
+);
 
+-- Tabela para armazenar notificações
+CREATE TABLE notificacoes (
+    id_notificacao INT PRIMARY KEY AUTO_INCREMENT,
+    id_usuario INT
+    meensagem TEXT NOT NULL,
+    data_notificacao DATETIME NOT NULL,
+    lida BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
+
+);
+
+-- Tabela para integração com calendário (eventos)
+CREATE TABLE eventosCalendario(
+    id_evento INT PRIMARY KEY AUTO_INCREMENT,
+    id_usuario INT,
+    id_viagem INT,
+    id_viagem_grupo INT,
+    data_evento DATE NOT NULL,
+    descricao_evento TEXT NOT NULL,
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
+    FOREIGN KEY (id_viagem) REFERENCES viagem(id_viagem),
+    FOREIGN KEY (id_viagem_grupo) REFERENCES viagensGrupo(id_viagem_grupo),
+
+
+);
 
 
 

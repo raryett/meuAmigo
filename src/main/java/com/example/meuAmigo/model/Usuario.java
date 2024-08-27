@@ -1,13 +1,15 @@
 package com.example.meuAmigo.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.antlr.v4.runtime.misc.NotNull;
+import jakarta.validation.constraints.NotNull;
+
+import java.util.List;
+
 
 @Entity
 @Getter
@@ -15,16 +17,19 @@ import org.antlr.v4.runtime.misc.NotNull;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
+    private int idUsuario ;
     @NotNull
     private String nomeCompleto;
-    @NotNull
-    private  String usuario;
     @NotNull
     private String email;
     @NotNull
     private String senha;
+
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonBackReference
+    private List<Viagem> viagem;
+
 
 
 }
