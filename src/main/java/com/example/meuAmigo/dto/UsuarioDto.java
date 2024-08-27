@@ -8,18 +8,9 @@ import lombok.Setter;
 @Setter
 public class UsuarioDto {
 
-    private int id;
-
-    private String nomeCompleto;
-
-    private String usuario;
-
-    private String email;
-
-    private String senha;
-
-    //so um teste pra ver se esta funcionando
-
-
+    private Integer    idUsuario;
+    private String     nomeCompleto;
+    private String     email;
+    private String     senha;
 
 }
