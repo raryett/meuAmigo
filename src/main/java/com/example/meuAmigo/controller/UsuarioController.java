@@ -16,20 +16,30 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @PostMapping("/addUsuario")
-    public String addUsuario(@RequestBody UsuarioDto usuarioDto) {
-        usuarioService.salvarUsuario(usuarioDto);
+    public String addUsuario(@RequestBody Usuario usuario) {
+        usuarioService.salvarUsuario(usuario);
         return "Usuario adicionado com sucesso!";
     }
 
-    @PostMapping("/listarUsuarios")
-    public List<UsuarioDto>  list() {
-        return usuarioService.todosUsuarios();
+    @GetMapping("/listarUsuarios")
+    public List<Usuario>  list() {
+        return usuarioService.buscarUsuarios();
     }
 
 
-//    @PostMapping("/buscaId")
-//    public UsuarioDto buscaId(@RequestBody UsuarioDto usuarioDto) {
-//
-//        return usuarioService.buscaPorId();
-//    }
+    @GetMapping("/buscarPorId")
+    public Usuario buscarPorId(@RequestParam(required = false) int idUsuario) throws IllegalAccessException {
+        if( idUsuario == 0 ){
+            throw new IllegalAccessException("Id não fornecida");
+        }
+        return  usuarioService.buscarUsuarioPorId(idUsuario);
+    }
+
+    @GetMapping("/bucarPorEmail")
+    public Usuario buscarUsuarioPorEmail(@RequestParam String email) throws IllegalAccessException {
+        if(email == null || email.isEmpty()){
+            throw  new IllegalAccessException("Deu ruim o email");
+        }
+        return usuarioService.buscarUsuarioPorEmail(email);
+    }
 }

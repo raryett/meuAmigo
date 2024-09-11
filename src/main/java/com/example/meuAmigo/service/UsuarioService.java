@@ -1,22 +1,25 @@
 package com.example.meuAmigo.service;
 
-import com.example.meuAmigo.dto.UsuarioDto;
+
 import com.example.meuAmigo.model.Usuario;
 
+
 import java.util.List;
-import java.util.Optional;
+
 
 public interface UsuarioService {
 
     //salvar um usuario
-    Usuario salvarUsuario(UsuarioDto usuarioDto);
+    Usuario salvarUsuario(Usuario usuario);
 
+    //usuario pelo id
+    Usuario buscarUsuarioPorId(int idUsuario);
 
-    //achar todos os usuarios
-    public List<UsuarioDto> todosUsuarios();
+    //listar todos os usuarios
+    List<Usuario> buscarUsuarios();
 
-//    ///achar um usuario especifico
-//    Optional<Usuario> buscaPorId(Integer idUsuario);
+    //buscar usuario pelo email
+    Usuario buscarUsuarioPorEmail(String email);
 
 
 }
