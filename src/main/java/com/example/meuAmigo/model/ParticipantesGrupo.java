@@ -21,7 +21,6 @@ public class ParticipantesGrupo {
     @JoinColumn (name = "idViagemGrupo", nullable=false)
     @JsonBackReference
     private ViagensGrupo viagensGrupo;
-
     private String nomeParticipante;
     private String contatoParticipante;
 

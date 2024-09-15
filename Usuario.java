@@ -4,6 +4,7 @@ package com.example.meuAmigo.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,10 +24,15 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUsuario ;
     @NotNull
+    @Column(nullable = false)
     private String nomeCompleto;
+
+    @Email
     @NotNull
+    @Column(nullable = false, unique= true)
     private String email;
     @NotNull
+    @Column(nullable = false)
     private String senha;
 
 

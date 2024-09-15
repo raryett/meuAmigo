@@ -21,5 +21,10 @@ public interface UsuarioService {
     //buscar usuario pelo email
     Usuario buscarUsuarioPorEmail(String email);
 
+    //autenticar usuario
+    boolean autenticarUsuario(String email, String senha);
+
+    //alterar senha do usuario
+    void atualizarSenha(String email, String novaSenha);
 
 }

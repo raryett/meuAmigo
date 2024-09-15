@@ -26,10 +26,4 @@ public class ViagensGrupo {
     @Column(columnDefinition = "TEXT")
     private String observacoes;
 
-
-
-
-
-
-
 }

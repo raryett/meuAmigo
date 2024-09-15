@@ -18,7 +18,7 @@ O sistema funciona assim:
         Mostra todas as viagens que a pessoa tem sozinha - Só uma lista de todas
             Criar uma viagem:
                 Nome da viagem -
-                Destino da viagem -
+                Destino -
                 Data da viagem -
                 Passagem de aviao -
                 Hospedagem da viagem -
