@@ -38,7 +38,7 @@ public class Usuario {
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonBackReference
-    private List<Viagem> viagem;
+    private List<ParticipantesGrupo> participantesGrupos;
 
 
 

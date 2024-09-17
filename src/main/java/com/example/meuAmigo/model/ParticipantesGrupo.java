@@ -16,13 +16,20 @@ public class ParticipantesGrupo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idParticipantes;
+
     //FK viagemGrupo
     @ManyToOne
     @JoinColumn (name = "idViagemGrupo", nullable=false)
     @JsonBackReference
     private ViagensGrupo viagensGrupo;
-    private String nomeParticipante;
-    private String contatoParticipante;
+
+    //Fk para usuario
+    @ManyToOne
+    @JoinColumn(name = "idUsuario",nullable = false)
+    private Usuario usuario;
+
+
+
 
 
 }
