@@ -1,6 +1,6 @@
 # Meu Amigo
 
-![Java Badge](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white) ![Gradle Badge](https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white)
+![Java Badge](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white) ![Maven Badge](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)
 
 Este é um projeto simples desenvolvido em Java, com foco em exemplos básicos de interação e manipulação de dados. Ele serve como uma base para demonstrar funcionalidades essenciais da linguagem e pode ser utilizado como ponto de partida para estudos ou protótipos.
 
@@ -16,7 +16,7 @@ Certifique-se de ter os seguintes softwares instalados:
 
 * **Java Development Kit (JDK)**: Versão 17 ou superior. Você pode baixar em [Oracle JDK](https://www.oracle.com/java/technologies/downloads/) ou [Open JDK](https://openjdk.org/install/).
 * **Git**: Para clonar o repositório. Você pode baixar em [git-scm.com](https://git-scm.com/downloads).
-* **Gradle**: (Opcional, mas recomendado se for usar a estrutura de build) Para gerenciar as dependências e construir o projeto. Pode ser instalado via [Gradle](https://gradle.org/install/).
+* **Apache Maven**: Para gerenciar as dependências e construir o projeto. Baixe em [maven.apache.org/download.cgi](https://maven.apache.org/download.cgi).
 
 ### Instalação e Execução
 
@@ -32,24 +32,20 @@ Certifique-se de ter os seguintes softwares instalados:
     cd meuAmigo
     ```
 
-3.  **Compile e execute o projeto:**
+3.  **Compile e execute o projeto com Maven:**
 
-    Se você estiver usando o Gradle:
     ```bash
-    gradle run
+    mvn clean install
+    mvn exec:java -Dexec.mainClass="Main"
     ```
-    Ou, se preferir compilar e executar manualmente (ajuste os caminhos se necessário):
-    ```bash
-    javac src/Main.java src/Funcoes.java 
-    java -cp src Main
-    ```
+    * **Observação:** Certifique-se de que sua classe principal (`Main`) está no pacote correto e que o `pom.xml` está configurado para executar essa classe. Se `Main` estiver em um pacote como `com.seuprojeto`, o comando seria `mvn exec:java -Dexec.mainClass="com.seuprojeto.Main"`.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
 * **Java**: Linguagem de programação principal.
-* **Gradle**: Sistema de automação de build (gerenciamento de dependências e compilação).
+* **Apache Maven**: Sistema de automação de build e gerenciamento de dependências.
 
 ---
 
@@ -76,3 +72,4 @@ Contribuições são sempre bem-vindas! Se você tiver sugestões, melhorias ou 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
+
